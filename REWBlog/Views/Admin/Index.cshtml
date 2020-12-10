@@ -1,0 +1,66 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+
+@{
+    if ((int)ViewBag.numCheckDel > 0)
+    {
+        <div class="modal fade" id="showDelNumModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">重置今日签到</h4>
+                    </div>
+                    <div class="modal-body">共有@((int)ViewBag.numCheckDel) 条记录被删除</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $('#showDelNumModal').modal();
+        </script>
+
+    }
+
+    if ((int)ViewBag.numNotiDel > 0)
+    {
+        <div class="modal fade" id="showNotiDelNumModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">重置所有消息</h4>
+                    </div>
+                    <div class="modal-body">共有@((int)ViewBag.numNotiDel) 条记录被删除</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $('#showNotiDelNumModal').modal();
+        </script>
+    }
+}
+<h2>管理后台</h2>
+<div>
+    @Html.ActionLink("管理文章", "AdminArticles", "Admin")
+</div>
+<div>
+    @Html.ActionLink("管理用户", "AdminUsers", "Admin")
+</div>
+<div>
+    @Html.ActionLink("重置签到", "AdminDelCheck", "Admin")
+</div>
+<div>
+    @Html.ActionLink("管理轮播", "AdminSlideImg", "Admin")
+</div>
+<div>
+    @Html.ActionLink("重置所有消息", "AdminDeleteNotifications", "Admin")
+</div>
+

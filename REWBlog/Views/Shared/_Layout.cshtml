@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=yes">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <!--样式表-->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!--jQuery和bootStrap脚本文件-->
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.intellisense.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <!--文本编辑器-->
+    <script src="~/Addons/ckeditor/ckeditor.js"></script>
+    <!--图片上传插件-->
+    <script src="~/Addons/jqueryupload/upload.js"></script>
+    <!--ajax-->
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+
+    <style>
+        #div_head {
+            margin: 0;
+            background-color: #222222;
+            color: white;
+            height: 40px;
+        }
+
+            #div_head ul {
+                margin: 10px 10px;
+                float: left;
+                list-style: none;
+            }
+
+                #div_head ul li {
+                    margin: 0 20px;
+                    float: left;
+                }
+
+                    #div_head ul li a {
+                        color: white;
+                        font-weight: 800;
+                    }
+    </style>
+    <style>
+        body {
+            border: solid 1px;
+            border-color: red;
+            width: 1280px;
+            margin: auto;
+            overflow-x: auto;
+        }
+
+        #div_main {
+        }
+
+        #div_slide {
+        }
+
+
+        #div_mid {
+        }
+
+        #div_leftmenu {
+            margin: 20px auto;
+            width: 20%;
+            float: left;
+            height: 600px;
+            border: solid 1px;
+            border-color: #999999;
+        }
+
+        #div_articles {
+            margin: 20px 2.5%;
+            width: 55%;
+            height: 600px;
+            float: left;
+            border: solid 1px;
+            border-color: #999999;
+        }
+
+        #div_rightmenu {
+            margin: 20px 0;
+            width: 20%;
+            height: 600px;
+            float: right;
+            border: solid 1px;
+            border-color: #999999;
+        }
+    </style>
+    <style>
+        .floatleft {
+            float: left;
+        }
+
+        .floatright {
+            float: right;
+        }
+
+        .clearfloat {
+            clear: both;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            $("#div_userstatus").mouseenter(function ()
+            {
+                $("#div_userdropdown").fadeIn(500);
+            });
+            $("#div_userstatus").mouseleave(function ()
+            {
+                $("#div_userdropdown").fadeOut(500);
+            });
+
+
+            $("#link_check").click(function ()
+            {
+                $('#myModal').modal();
+            });
+
+        });
+    </script>
+</head>
+<body class="body-content">
+    @{ 
+        var denpendency = ViewData["BllDependency"];
+
+        REW的空间BLL.BLL_users bll_users = (REW的空间BLL.BLL_users)denpendency.GetType().GetProperty("bll_users").GetValue(denpendency);
+        REW的空间BLL.BLL_noti bll_noti = (REW的空间BLL.BLL_noti)denpendency.GetType().GetProperty("bll_noti").GetValue(denpendency);
+    }
+    <div id="div_head">
+
+        <ul>
+            <li>
+                @Html.ActionLink("主页", "Index", "Home")
+            </li>
+            @{
+                
+                if (User.Identity.IsAuthenticated)
+                {
+                    if (bll_users.IsAdmin(User.Identity.Name))
+                    {
+                        <li>@Html.ActionLink("管理", "Index", "Admin")</li>
+                    }
+                }
+            }
+            <li>
+                @Html.ActionLink("关于", "Contact", "Home")
+            </li>
+        </ul>
+
+
+        <div id="div_userstatus" class="floatright">
+
+            @{
+
+
+
+                if (Context.User.Identity.IsAuthenticated)
+                {
+                    <img style="height:30px;width:30px;border-radius:15px;" src="~/Images/ProfilePics/@(Context.User.Identity.Name).png" onerror='this.src="/Images/ProfilePics/DefaultPic.png"' />
+                    <span class="label" style="margin:10px;font-size:20px;"> @Context.User.Identity.Name </span>
+
+                }
+                else
+                {
+                    <span class="label">未登录</span>
+                    @Html.ActionLink("登录", "Login", "Home", new { area = "" }, new { @class = "navvar-brand" })
+                }
+
+
+
+            }
+
+            @{
+                
+                if (Context.User.Identity.IsAuthenticated)
+                {
+                    <div id="div_userdropdown" style="display:none;background-color:#222222;">
+                        <a href="/Account/Notifications" class="btn btn-block btn-dark" style="color:white;">
+                            我的消息<span style="color:red">&nbsp;@bll_noti.GetAllByUserName(Context.User.Identity.Name).Where(x => x.READ == false).Count()</span>
+                        </a>
+                        <a href="/Account/Index" class="btn btn-block btn-dark" style="color:white;">
+                            我的个人空间
+                        </a>
+                        @Html.ActionLink("退出登录", "Logout", "Home", new { area = "" }, new { @class = "btn btn-block btn-dark", style = "color:white;" })
+                    </div>
+                }
+            }
+
+        </div>
+        <div id="div_checkin" class="float-right">
+
+            @{
+                if (Context.User.Identity.IsAuthenticated)
+                {
+                    if (REW的空间.MyClasses.ClassCheckIn.IsCheckedIn(Context.User.Identity.Name))
+                    {
+                        <div class="btn btn-secondary">已签到</div>
+                    }
+                    else
+                    {
+                        @Ajax.ActionLink("签到", "AjaxCheckIn", new { controller = "Account" }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "div_checkin", InsertionMode = InsertionMode.Replace }, new { id = "link_check", @class = "btn btn-danger" })
+                        <span>&nbsp;&nbsp;</span>
+                    }
+                }
+            }
+
+        </div>
+        <div class="clearfloat"></div>
+    </div>
+
+    <div id="div_main" class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Dev:ZhouQiJie</p>
+            <p>&copy; @DateTime.Now.Year - Noncommercial,For learning only.</p>
+        </footer>
+    </div>
+
+    <!--签到模态框-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">签到</h4>
+                </div>
+                <div class="modal-body">签到成功，积分+1</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@model List<REW的空间Model.USERS>
+@{
+    ViewBag.Title = "ShowUsers";
+}
+
+<h2>用户列表</h2>
+
+@{
+    List<int> listOfFocusId = (List<int>)ViewBag.ListOfFocusID;
+    foreach (var item in Model)
+    {
+        if (item.NAME != User.Identity.Name)
+        {
+            <div>
+                <div class="float-left">
+
+                    <p>
+                        <img src="~/Images/ProfilePics/@(item.NAME).png" style="height:50px;width:50px;border-radius:25px" onerror='this.src="/Images/ProfilePics/DefaultPic.png"' />
+                        <span>@item.NAME</span>
+                    </p>
+                </div>
+                <div class="float-right">
+
+                    @{
+
+                        if (!listOfFocusId.Contains(item.UID))
+                        {
+                            @Html.ActionLink("+关注", "FocusUser", "Account", new { id = item.UID }, new { @class = "btn btn-primary" })
+                        }
+                        else
+                        {
+                            @Html.ActionLink("取消关注", "CancelFocus", "Account", new { id = item.UID }, new { @class = "btn btn-danger" })
+                        }
+                    }
+
+
+                </div>
+                <div class="clearfloat"></div>
+            </div>
+        }
+
+    }
+}
+

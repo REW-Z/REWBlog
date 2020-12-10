@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="REWSPACE_DBModelStoreContainer" CdmEntityContainer="REWSPACE_DBEntities">
+    <EntitySetMapping Name="ARTICLES">
+      <EntityTypeMapping TypeName="IsTypeOf(REWSPACE_DBModel.ARTICLES)">
+        <MappingFragment StoreEntitySet="ARTICLES">
+          <ScalarProperty Name="A_ID" ColumnName="A_ID" />
+          <ScalarProperty Name="A_NAME" ColumnName="A_NAME" />
+          <ScalarProperty Name="A_AUTHOR" ColumnName="A_AUTHOR" />
+          <ScalarProperty Name="A_DATE" ColumnName="A_DATE" />
+          <ScalarProperty Name="A_TID" ColumnName="A_TID" />
+          <ScalarProperty Name="A_CONTENT" ColumnName="A_CONTENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPES">
+      <EntityTypeMapping TypeName="IsTypeOf(REWSPACE_DBModel.TYPES)">
+        <MappingFragment StoreEntitySet="TYPES">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_NAME" ColumnName="T_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="IsTypeOf(REWSPACE_DBModel.USERS)">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PWD" ColumnName="PWD" />
+          <ScalarProperty Name="PIC" ColumnName="PIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,23 @@
+﻿@model REW的空间Model.ARTICLES
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>文章详情</h2>
+
+<div class="card">
+    <p style="font-size:24px;text-align:center;">
+        <b>@Model.A_NAME</b>
+    </p>
+    <br />
+    @{
+        @Html.Raw(Model.A_CONTENT)
+    }
+
+
+
+
+</div>
+
+

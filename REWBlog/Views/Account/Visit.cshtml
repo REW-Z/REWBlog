@@ -1,0 +1,52 @@
+﻿@model REW的空间Model.USERS
+
+@{
+    ViewBag.Title = "Visit";
+}
+
+<h2>用户信息</h2>
+<div class="float-left">
+    <img id="img_profile" src="~/Images/ProfilePics/@(Model.NAME).png" style="height:200px;width:200px;border:solid 1px;" onerror='this.src = "/Images/ProfilePics/DefaultPic.png"' />
+</div>
+<div class="float-left" style="margin:20px 20px;">
+    <p style="font-size:18px;">
+        <b><i>@Model.NAME</i></b>
+    </p>
+    <p>
+        用户组：
+        @{
+            if (Model.ROLE == "Admin")
+            {
+                <img src="/Images/App/admin.png"><span>管理员</span>
+            }
+            else
+            {
+                <span>普通用户</span>
+            }
+        }
+    </p>
+    <p>
+        TA发表文章@(ViewBag.ArticleCount)篇
+    </p>
+    <p>
+        TA的积分：@Model.POINTS
+    </p>
+    <p>
+        TA的粉丝（@(((List<int>)ViewBag.AllFollower).Count)）
+    </p>
+    <p>
+        TA的关注（@(((List<int>)ViewBag.AllFocus).Count)）
+    </p>
+    @{
+        if (((List<int>)ViewBag.ListOfFocusID).Contains(Model.UID))
+        {
+            @Html.ActionLink("取消关注", "CancelFocus", "Account", new { id = Model.UID, ReturnUrl = "~/Account/Visit" }, new { })
+        }
+        else
+        {
+            @Html.ActionLink("加为好友", "FocusUser", "Account", new { id = Model.UID, ReturnUrl = "~/Account/Visit" }, new { })
+        }
+    }
+
+</div>
+<div class="clearfloat"></div>

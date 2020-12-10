@@ -1,0 +1,23 @@
+﻿@model List<REW的空间Model.ARTICLES>
+@{
+    ViewBag.Title = "ShowArticles";
+}
+
+<h2>我的文章</h2>
+
+@{
+    foreach (var item in Model)
+    {
+        <div class="card">
+            <div class="card-header">@item.A_NAME</div>
+            <div class="card-body">
+                日期：@item.A_DATE &nbsp;&nbsp;
+                类别：@item.TYPES.T_NAME &nbsp;&nbsp;
+                <div class="float-right">@Html.ActionLink("删除文章", "DeleteArticle", new { id = item.A_ID, controller = "Account" }, new { @class = "btn btn-info" })</div>
+                &nbsp;
+                <div class="float-right">@Html.ActionLink("编辑文章", "EditArticle", new { id=item.A_ID, controller = "Account" }, new { @class = "btn btn-info" })</div>
+                <div class="clearfloat"></div>
+            </div>
+        </div>
+    }
+}

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="REWSPACE_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ARTICLES">
+    <Key>
+      <PropertyRef Name="A_ID" />
+    </Key>
+    <Property Name="A_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="A_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="A_AUTHOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="A_DATE" Type="DateTime" Precision="3" />
+    <Property Name="A_TID" Type="Int32" Nullable="false" />
+    <Property Name="A_CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TYPES" Relationship="Self.FK_ARTICLESTYPES" FromRole="ARTICLES" ToRole="TYPES" />
+  </EntityType>
+  <EntityType Name="TYPES">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="T_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ARTICLES" Relationship="Self.FK_ARTICLESTYPES" FromRole="TYPES" ToRole="ARTICLES" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PIC" Type="String" Nullable="true" />
+  </EntityType>
+  <Association Name="FK_ARTICLESTYPES">
+    <End Role="TYPES" Type="Self.TYPES" Multiplicity="1" />
+    <End Role="ARTICLES" Type="Self.ARTICLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPES">
+        <PropertyRef Name="T_ID" />
+      </Principal>
+      <Dependent Role="ARTICLES">
+        <PropertyRef Name="A_TID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="REWSPACE_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ARTICLES" EntityType="Self.ARTICLES" />
+    <EntitySet Name="TYPES" EntityType="Self.TYPES" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" />
+    <AssociationSet Name="FK_ARTICLESTYPES" Association="Self.FK_ARTICLESTYPES">
+      <End Role="TYPES" EntitySet="TYPES" />
+      <End Role="ARTICLES" EntitySet="ARTICLES" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3DEF207-24E5-4BE2-9133-7490D45069E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>REW的空间Model</RootNamespace>
+    <AssemblyName>REW的空间Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ARTICLES.cs" />
+    <Compile Include="CHECKIN.cs" />
+    <Compile Include="Entities.cs" />
+    <Compile Include="Migrations\201908101151110_newRELATIONS.cs" />
+    <Compile Include="Migrations\201908101151110_newRELATIONS.Designer.cs">
+      <DependentUpon>201908101151110_newRELATIONS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908101806065_new_Points.cs" />
+    <Compile Include="Migrations\201908101806065_new_Points.Designer.cs">
+      <DependentUpon>201908101806065_new_Points.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908110846552_new_ROLE.cs" />
+    <Compile Include="Migrations\201908110846552_new_ROLE.Designer.cs">
+      <DependentUpon>201908110846552_new_ROLE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908300823209_addCheckTable.cs" />
+    <Compile Include="Migrations\201908300823209_addCheckTable.Designer.cs">
+      <DependentUpon>201908300823209_addCheckTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908301109268_delCheckTable.cs" />
+    <Compile Include="Migrations\201908301109268_delCheckTable.Designer.cs">
+      <DependentUpon>201908301109268_delCheckTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908301112361_reCreateCheckTable.cs" />
+    <Compile Include="Migrations\201908301112361_reCreateCheckTable.Designer.cs">
+      <DependentUpon>201908301112361_reCreateCheckTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909031112403_Add_NotificationTable.cs" />
+    <Compile Include="Migrations\201909031112403_Add_NotificationTable.Designer.cs">
+      <DependentUpon>201909031112403_Add_NotificationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909031127345_add_column_whose.cs" />
+    <Compile Include="Migrations\201909031127345_add_column_whose.Designer.cs">
+      <DependentUpon>201909031127345_add_column_whose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909031340335_add-IsRead.cs" />
+    <Compile Include="Migrations\201909031340335_add-IsRead.Designer.cs">
+      <DependentUpon>201909031340335_add-IsRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TYPES.cs" />
+    <Compile Include="NOTIFICATIONS.cs" />
+    <Compile Include="USERS.cs" />
+    <Compile Include="RELATIONS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201908101151110_newRELATIONS.resx">
+      <DependentUpon>201908101151110_newRELATIONS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908101806065_new_Points.resx">
+      <DependentUpon>201908101806065_new_Points.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908110846552_new_ROLE.resx">
+      <DependentUpon>201908110846552_new_ROLE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908300823209_addCheckTable.resx">
+      <DependentUpon>201908300823209_addCheckTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908301109268_delCheckTable.resx">
+      <DependentUpon>201908301109268_delCheckTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908301112361_reCreateCheckTable.resx">
+      <DependentUpon>201908301112361_reCreateCheckTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909031112403_Add_NotificationTable.resx">
+      <DependentUpon>201909031112403_Add_NotificationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909031127345_add_column_whose.resx">
+      <DependentUpon>201909031127345_add_column_whose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909031340335_add-IsRead.resx">
+      <DependentUpon>201909031340335_add-IsRead.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

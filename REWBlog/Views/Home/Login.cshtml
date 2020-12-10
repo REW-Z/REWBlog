@@ -1,0 +1,45 @@
+﻿@model REW的空间Model.USERS
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<div class="card text-md-center" style="width:350px;margin:20px auto;">
+    <div class="card-header">
+        <p>用户登录</p>
+    </div>
+    <div class="card-body">
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(x => x.NAME)</td>
+                    <td colspan="2">@Html.TextBoxFor(x => x.NAME)</td>
+
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(x => x.PWD)</td>
+                    <td colspan="2">@Html.TextBoxFor(x => x.PWD)</td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        <input type="submit" class="btn-lg float-left" value="登录" />
+                        @Html.ActionLink("注册", "Signup", new { area = "" }, new { @class = "float-right" })
+                        <div class="clearfloat"></div>
+                    </td>
+                </tr>
+            </table>
+
+            if (ViewBag.Errors)
+            {
+                @Html.ValidationSummary(false, null, new { id = "valid", @class = "alert alert-warning" })
+            }
+
+
+            @Html.Hidden("ReturnUrl", Request.QueryString["ReturnUrl"])
+        }
+    </div>
+
+</div>

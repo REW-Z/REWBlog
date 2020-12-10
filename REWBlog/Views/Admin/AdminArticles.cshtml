@@ -1,0 +1,94 @@
+﻿@model List<REW的空间Model.ARTICLES>
+@{
+    ViewBag.Title = "AdminArticles";
+}
+
+<h2>AdminArticles</h2>
+
+<h2>文章列表</h2>
+
+<div id="div_search">
+    <form action="/Admin/AdminArticles" method="post">
+        <div id="div_keyword" class="float-left" style="display:none">
+            <input id="keyword" class="form-control" name="keyword" type="text" />
+        </div>
+        <div class="float-left">
+            <input class="btn btn-info" type="submit" value="查找" />
+        </div>
+        <div class="clearfloat"></div>
+    </form>
+
+    <script type="text/javascript">
+        $("#div_search").mouseenter(function ()
+        {
+            $("#div_keyword").fadeIn(50);
+        });
+        $("#div_search").mouseleave(function ()
+        {
+            $("#div_keyword").fadeOut(50);
+        });
+    </script>
+</div>
+@{
+    foreach (var item in Model)
+    {
+        <a href="/Read/Index/@item.A_ID" style="color:black;">
+            <div style="border:solid 1px gray;margin:10px 0;">
+                <div style="width:200px;float:left">
+                    <span><b>@item.A_NAME</b></span>
+                </div>
+                <div style="width:200px;float:left">
+                    <span>作者：</span>
+                    <img src="~/Images/ProfilePics/@(item.A_AUTHOR).png" style="height:30px;width:30px;border-radius:15px" onerror='this.src="/Images/ProfilePics/DefaultPic.png"' />
+                    <span>@item.A_AUTHOR</span>
+                </div>
+                <div class="float-right">
+                    @Html.ActionLink("删除文章", "DeleteArticle", "Admin", new { id = item.A_ID }, new { })
+                </div>
+                <div style="width:200px;float:right">
+                    <span>发表日期：@item.A_DATE</span>
+                </div>
+                <div class="clearfloat"></div>
+            </div>
+        </a>
+    }
+}
+<div>
+    @{
+        if ((int)ViewBag.currentpage > 1)
+        {
+            @Html.ActionLink("上一页", "AdminArticles", "Admin", new { id = (((int)ViewBag.currentpage) - 1) }, new { })
+        }
+        else
+        {
+            <span>上一页</span>
+        }
+    }
+    <span></span>
+
+    @{
+        for (int i = 1; i <= (int)ViewBag.pagecount; i++)
+        {
+            if (i != (int)ViewBag.currentpage)
+            {
+                @Html.ActionLink(i.ToString(), "AdminArticles", "Admin", new { id = i }, new { })
+            }
+            else
+            {
+                <span>@i.ToString()</span>
+            }
+        }
+    }
+
+    @{
+        if ((int)ViewBag.currentpage < (int)ViewBag.pagecount)
+        {
+            @Html.ActionLink("下一页", "AdminArticles", "Admin", new { id = (((int)ViewBag.currentpage) + 1) }, new { })
+        }
+        else
+        {
+            <span>下一页</span>
+        }
+    }
+    <p>共 @ViewBag.articlecount 篇</p>
+</div>

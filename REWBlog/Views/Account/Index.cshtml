@@ -1,0 +1,83 @@
+﻿@model REW的空间Model.USERS
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>用户信息</h2>
+
+<div class="float-left">
+    <a data-toggle="modal" data-target="#uploadModal">
+        <img id="img_profile" src="@((string)ViewBag.ImgSrc)" style="height:200px;width:200px;border:solid 1px;" />
+    </a>
+</div>
+<div class="float-left" style="margin:20px 20px;">
+    <p style="font-size:18px;">
+        <b><i>@ViewBag.UserName</i></b>
+    </p>
+    <p>
+        用户组：
+        @{ 
+            if(Model.ROLE == "Admin")
+            {
+                <img src="/Images/App/admin.png"><span>管理员</span>
+            }
+            else
+            {
+                <span>普通用户</span>
+            }
+        }
+    </p>
+    <p>
+        发表文章@(ViewBag.ArticleCount)篇
+    </p>
+    <p>
+        积分：@Model.POINTS
+    </p>
+    <p>
+        粉丝（@(((List<int>)ViewBag.AllFollower).Count)）
+    </p>
+    <p>
+        关注（@(((List<int>)ViewBag.AllFocus).Count)）
+    </p>
+    <p>
+        @Html.ActionLink("修改密码", "ChangePassword", "Account", new { }, new { })
+    </p>
+    <p>
+        @Html.ActionLink("我的文章", "ShowMyArticles", "Account", new { }, new { })
+    </p>
+    <p>
+        @{
+            if (Model.ROLE == "Admin")
+            {
+                @Html.ActionLink("管理网站", "Index", "Admin")
+            }
+        }
+
+    </p>
+</div>
+<div class="clearfloat"></div>
+
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">上传头像</h4>
+            </div>
+            <div class="modal-body">
+
+                <form id="_form" action="/Account/SetProfilePic" enctype="multipart/form-data" method="post">
+                    <input id="input_file" type="file" name="file" />
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick='$("#_form").submit(); $("#uploadModal").modal("hide")'>提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+

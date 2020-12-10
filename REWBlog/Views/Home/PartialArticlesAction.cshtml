@@ -1,0 +1,48 @@
+﻿@model List<REW的空间Model.ARTICLES>
+
+@{
+
+
+    if (Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+
+            <div class="card" style="margin:10px 10px;">
+                <a href="/Read/Index/@item.A_ID" style="color:black;text-decoration:none">
+                    <div class="card-body">
+                        <div class="float-left">
+                            <img src="~/Images/ProfilePics/@(item.A_AUTHOR).png" style="height:30px;width:30px;border-radius:15px" onerror='this.src="/Images/ProfilePics/DefaultPic.png"' />
+                            <span><b>@item.A_AUTHOR</b> 发表了 <b>@(item.A_NAME)</b></span>
+                        </div>
+                        <div class="float-lg-right">
+                            @{
+                                if ((DateTime.Now - item.A_DATE).Value.TotalHours > 1 && (DateTime.Now - item.A_DATE).Value.TotalHours < 24)
+                                {
+                                    <span>@(((int)((DateTime.Now - item.A_DATE).Value.TotalHours)).ToString())小时前</span>
+                                }
+                                else if ((DateTime.Now - item.A_DATE).Value.TotalHours < 1)
+                                {
+                                    <span>@(((int)((DateTime.Now - item.A_DATE).Value.TotalMinutes)).ToString())分钟前</span>
+                                }
+                                else
+                                {
+                                    <span>@(((int)((DateTime.Now - item.A_DATE).Value.TotalDays)).ToString())天前</span>
+                                }
+                            }
+                        </div>
+                        <div class="clearfloat"></div>
+                    </div>
+                </a>
+            </div>
+
+        }
+    }
+    else
+    {
+        <h2 style="margin:20px;color:gray;">暂无记录</h2>
+    }
+
+}
+
+

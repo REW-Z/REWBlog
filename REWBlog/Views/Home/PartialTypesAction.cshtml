@@ -1,0 +1,15 @@
+﻿@model List<REW的空间Model.TYPES>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        @Ajax.ActionLink("全部", "AjaxArticles", new { controller = "Home" }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "div_inside_articles", InsertionMode = InsertionMode.Replace }, new { @class="nav-link active show", role="tab", data_toggle = "tab" })
+    </li>
+    @foreach (var item in Model)
+    {
+        <li class="nav-item">
+            @Ajax.ActionLink(item.T_NAME, "AjaxArticles", new { controller = "Home", id = item.T_ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "div_inside_articles", InsertionMode = InsertionMode.Replace }, new { @class = "nav-link", role = "tab", data_toggle = "tab" })
+        </li>
+
+    }
+</ul>
+

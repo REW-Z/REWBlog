@@ -1,0 +1,105 @@
+﻿@model List<REW的空间Model.ARTICLES>
+@{
+    ViewBag.Title = "Index";
+}
+<div style="height:130px;margin:0;padding:15px 0;">
+    <img src="~/Images/App/siteTitle.png" style="height:100px;width:500px;margin:0;padding:0;float:left">
+    <div class="clearfloat"></div>
+</div>
+
+<div id="div_slide" class="carousel slide" data-ride="carousel">
+
+    <!-- 指示符 -->
+    <ul class="carousel-indicators">
+
+        @{
+            int j = 0;
+            foreach (var file in (FileInfo[])ViewBag.Imgs)
+            {
+                if (j == 0)
+                {
+                    <li data-target="#div_slide" data-slide-to="0" class="active"></li>
+                }
+                else
+                {
+                    <li data-target="#div_slide" data-slide-to="@j"></li>
+                }
+
+                j++;
+            }
+        }
+    </ul>
+
+    <!-- 轮播图片 -->
+    <div class="carousel-inner">
+
+        @{
+            int i = 0;
+            foreach (var file in (FileInfo[])ViewBag.Imgs)
+            {
+                if (i == 0)
+                {
+                    <div class="carousel-item active">
+                        <img style="height:400px;width:1200px" src="~/Images/Slides/@file.Name">
+                    </div>
+                }
+                else
+                {
+                    <div class="carousel-item">
+                        <img style="height:400px;width:1200px" src="~/Images/Slides/@file.Name">
+                    </div>
+                }
+
+                i++;
+            }
+        }
+
+    </div>
+
+    <!-- 左右切换按钮 -->
+    <a class="carousel-control-prev" href="#div_slide" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#div_slide" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+</div>
+
+
+
+<div id="div_mid">
+
+    <div id="div_leftmenu">
+        <p style="color:gray;font-size:20px;">活跃用户：</p>
+        @Html.Action("PartialActiveUsers", "Home", new { })
+    </div>
+
+    <div id="div_articles">
+        <p style="color:gray;font-size:20px;">最新动态：</p>
+        @Html.Action("PartialTypesAction", "Home", new { })
+
+        <div id="div_inside_articles">
+            @Html.Action("PartialArticlesAction", "Home", new { })
+        </div>
+        <div class="clearfloat"></div>
+        <div class="float-right">
+            @Html.ActionLink(">>更多", "Index", "Search", new { }, new { @class = "btn btn-primary", style = "margin:20px;" })
+        </div>
+        <div class="clearfloat"></div>
+    </div>
+
+
+
+    <div id="div_rightmenu">
+        <a style=""></a>
+        @Html.ActionLink("发布文章", "Index", "Publish", new { }, new { @class = "btn btn-secondary", style = "margin:10px 10%;width:80%;" })
+        <br />
+        @Html.ActionLink("用户列表", "ShowOtherUsers", "Account", new { }, new { @class = "btn btn-secondary", style = "margin:10px 10%;width:80%;" })
+
+    </div>
+    <div class="clearfloat"></div>
+
+
+</div>
+

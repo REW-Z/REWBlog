@@ -1,0 +1,27 @@
+﻿@model REW的空间Model.ARTICLES
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Publish-Index</h2>
+@using (Html.BeginForm("Publish", "Publish", FormMethod.Post))
+{
+    <span>标题</span>
+    @Html.TextBoxFor(x => x.A_NAME)
+    <br />
+    <span>分类</span>
+    @Html.DropDownListFor(x => x.A_TID, (IEnumerable<SelectListItem>)ViewBag.ListOfTypes)
+    <br />
+    <span>内容</span>
+    @Html.TextAreaFor(x => x.A_CONTENT)
+    <script type="text/javascript">
+        CKEDITOR.replace('A_CONTENT');
+    </script>
+    <br />
+    @Html.HiddenFor(x => x.A_DATE, new { @Value = DateTime.Now })
+    @Html.HiddenFor(x => x.A_AUTHOR, new { @Value = Context.User.Identity.Name })
+    <input type="submit" class="btn-lg" value="发表">
+
+}
+
+
