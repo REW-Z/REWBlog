@@ -7,8 +7,8 @@
     <ProjectGuid>{938EEEAD-2385-43D0-B826-60427C772BA1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>REW的空间DAL</RootNamespace>
-    <AssemblyName>REW的空间DAL</AssemblyName>
+    <RootNamespace>REWBlogDAL</RootNamespace>
+    <AssemblyName>REWBlogDAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

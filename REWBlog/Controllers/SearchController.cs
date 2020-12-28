@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using REW的空间Model;
-using REW的空间BLL;
+using REWBlogModel;
+using REWBlogBLL;
 
-namespace REW的空间.Controllers
+namespace REWBlog.Controllers
 {
     public class SearchController : ApplicationController
     {

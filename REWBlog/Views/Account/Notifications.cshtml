@@ -1,4 +1,4 @@
-﻿@model List<REW的空间Model.NOTIFICATIONS>
+﻿@model List<REWBlogModel.NOTIFICATIONS>
 @{
     ViewBag.Title = "Notifications";
 }
@@ -24,7 +24,7 @@
                 <div class="card-body">
                     @{
                         int articleId = Convert.ToInt32(item.MESSAGE);
-                        if (((REW的空间BLL.BLL_articles)ViewBag.bll_articles).GetArticleById(articleId) != null)
+                        if (((REWBlogBLL.BLL_articles)ViewBag.bll_articles).GetArticleById(articleId) != null)
                         {
                             string articleName = ViewBag.bll_articles.GetArticleById(articleId).A_NAME;
                             if (item.WHOSE == item.USERNAME)

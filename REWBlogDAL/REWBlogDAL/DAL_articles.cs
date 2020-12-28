@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using REW的空间Model;
+using REWBlogModel;
 
-namespace REW的空间DAL
+namespace REWBlogDAL
 {
     public class DAL_articles
     {
@@ -91,7 +91,8 @@ namespace REW的空间DAL
         {
             ARTICLES arti_edit = dbc.ARTICLES.FirstOrDefault(x => x.A_ID == article.A_ID);
             arti_edit.A_NAME = article.A_NAME;
-            arti_edit.A_DATE = DateTime.Now;
+            arti_edit.A_DATE = article.A_DATE; // cheat:日期自定义
+            arti_edit.A_CATALOG = article.A_CATALOG;
             arti_edit.A_CONTENT = article.A_CONTENT;
             int result = dbc.SaveChanges();
             if(result > 0)

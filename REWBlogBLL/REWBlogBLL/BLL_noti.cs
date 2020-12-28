@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using REW的空间DAL;
-using REW的空间Model;
+using REWBlogDAL;
+using REWBlogModel;
 
-namespace REW的空间BLL
+namespace REWBlogBLL
 {
     public class BLL_noti
     {
-        REW的空间DAL.DAL_noti dal_noti = new REW的空间DAL.DAL_noti();
-        REW的空间DAL.DAL_users dal_users = new DAL_users();
-        REW的空间DAL.DAL_relations dal_relations = new DAL_relations();
+        REWBlogDAL.DAL_noti dal_noti = new REWBlogDAL.DAL_noti();
+        REWBlogDAL.DAL_users dal_users = new DAL_users();
+        REWBlogDAL.DAL_relations dal_relations = new DAL_relations();
         /// <summary>
         /// 添加自己的消息
         /// </summary>

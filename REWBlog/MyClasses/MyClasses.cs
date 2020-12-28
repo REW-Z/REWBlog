@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using REW的空间BLL;
-using REW的空间Model;
+using REWBlogBLL;
+using REWBlogModel;
 
-namespace REW的空间.MyClasses
+namespace REWBlog.MyClasses
 {
     public class ClassCheckIn
     {

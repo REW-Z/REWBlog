@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using REW的空间DAL;
-using REW的空间Model;
+using REWBlogDAL;
+using REWBlogModel;
 
-namespace REW的空间BLL
+namespace REWBlogBLL
 {    
     public class BLL_types
     {

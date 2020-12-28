@@ -7,8 +7,8 @@
     <ProjectGuid>{C3DEF207-24E5-4BE2-9133-7490D45069E1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>REW的空间Model</RootNamespace>
-    <AssemblyName>REW的空间Model</AssemblyName>
+    <RootNamespace>REWBlogModel</RootNamespace>
+    <AssemblyName>REWBlogModel</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -71,41 +71,13 @@
     <Compile Include="ARTICLES.cs" />
     <Compile Include="CHECKIN.cs" />
     <Compile Include="Entities.cs" />
-    <Compile Include="Migrations\201908101151110_newRELATIONS.cs" />
-    <Compile Include="Migrations\201908101151110_newRELATIONS.Designer.cs">
-      <DependentUpon>201908101151110_newRELATIONS.cs</DependentUpon>
+    <Compile Include="Migrations\202012271850338_InitMigration.cs" />
+    <Compile Include="Migrations\202012271850338_InitMigration.Designer.cs">
+      <DependentUpon>202012271850338_InitMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908101806065_new_Points.cs" />
-    <Compile Include="Migrations\201908101806065_new_Points.Designer.cs">
-      <DependentUpon>201908101806065_new_Points.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908110846552_new_ROLE.cs" />
-    <Compile Include="Migrations\201908110846552_new_ROLE.Designer.cs">
-      <DependentUpon>201908110846552_new_ROLE.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908300823209_addCheckTable.cs" />
-    <Compile Include="Migrations\201908300823209_addCheckTable.Designer.cs">
-      <DependentUpon>201908300823209_addCheckTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908301109268_delCheckTable.cs" />
-    <Compile Include="Migrations\201908301109268_delCheckTable.Designer.cs">
-      <DependentUpon>201908301109268_delCheckTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908301112361_reCreateCheckTable.cs" />
-    <Compile Include="Migrations\201908301112361_reCreateCheckTable.Designer.cs">
-      <DependentUpon>201908301112361_reCreateCheckTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909031112403_Add_NotificationTable.cs" />
-    <Compile Include="Migrations\201909031112403_Add_NotificationTable.Designer.cs">
-      <DependentUpon>201909031112403_Add_NotificationTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909031127345_add_column_whose.cs" />
-    <Compile Include="Migrations\201909031127345_add_column_whose.Designer.cs">
-      <DependentUpon>201909031127345_add_column_whose.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909031340335_add-IsRead.cs" />
-    <Compile Include="Migrations\201909031340335_add-IsRead.Designer.cs">
-      <DependentUpon>201909031340335_add-IsRead.cs</DependentUpon>
+    <Compile Include="Migrations\202012271854156_newCATALOG.cs" />
+    <Compile Include="Migrations\202012271854156_newCATALOG.Designer.cs">
+      <DependentUpon>202012271854156_newCATALOG.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,32 +106,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908101151110_newRELATIONS.resx">
-      <DependentUpon>201908101151110_newRELATIONS.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012271850338_InitMigration.resx">
+      <DependentUpon>202012271850338_InitMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908101806065_new_Points.resx">
-      <DependentUpon>201908101806065_new_Points.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908110846552_new_ROLE.resx">
-      <DependentUpon>201908110846552_new_ROLE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908300823209_addCheckTable.resx">
-      <DependentUpon>201908300823209_addCheckTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908301109268_delCheckTable.resx">
-      <DependentUpon>201908301109268_delCheckTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908301112361_reCreateCheckTable.resx">
-      <DependentUpon>201908301112361_reCreateCheckTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909031112403_Add_NotificationTable.resx">
-      <DependentUpon>201909031112403_Add_NotificationTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909031127345_add_column_whose.resx">
-      <DependentUpon>201909031127345_add_column_whose.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909031340335_add-IsRead.resx">
-      <DependentUpon>201909031340335_add-IsRead.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012271854156_newCATALOG.resx">
+      <DependentUpon>202012271854156_newCATALOG.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

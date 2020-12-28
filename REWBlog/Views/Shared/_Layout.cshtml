@@ -12,7 +12,7 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
     <!--文本编辑器-->
-    <script src="~/Addons/ckeditor/ckeditor.js"></script>
+    <script src="~/Addons/ckeditor5-build-classic/ckeditor.js"></script>
     <!--图片上传插件-->
     <script src="~/Addons/jqueryupload/upload.js"></script>
     <!--ajax-->
@@ -128,8 +128,8 @@
     @{ 
         var denpendency = ViewData["BllDependency"];
 
-        REW的空间BLL.BLL_users bll_users = (REW的空间BLL.BLL_users)denpendency.GetType().GetProperty("bll_users").GetValue(denpendency);
-        REW的空间BLL.BLL_noti bll_noti = (REW的空间BLL.BLL_noti)denpendency.GetType().GetProperty("bll_noti").GetValue(denpendency);
+        REWBlogBLL.BLL_users bll_users = (REWBlogBLL.BLL_users)denpendency.GetType().GetProperty("bll_users").GetValue(denpendency);
+        REWBlogBLL.BLL_noti bll_noti = (REWBlogBLL.BLL_noti)denpendency.GetType().GetProperty("bll_noti").GetValue(denpendency);
     }
     <div id="div_head">
 
@@ -138,7 +138,7 @@
                 @Html.ActionLink("主页", "Index", "Home")
             </li>
             @{
-                
+
                 if (User.Identity.IsAuthenticated)
                 {
                     if (bll_users.IsAdmin(User.Identity.Name))
@@ -149,6 +149,9 @@
             }
             <li>
                 @Html.ActionLink("关于", "Contact", "Home")
+            </li>
+            <li>
+                @Html.ActionLink("测试", "Test", "Home")
             </li>
         </ul>
 
@@ -197,7 +200,7 @@
             @{
                 if (Context.User.Identity.IsAuthenticated)
                 {
-                    if (REW的空间.MyClasses.ClassCheckIn.IsCheckedIn(Context.User.Identity.Name))
+                    if (REWBlog.MyClasses.ClassCheckIn.IsCheckedIn(Context.User.Identity.Name))
                     {
                         <div class="btn btn-secondary">已签到</div>
                     }

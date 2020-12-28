@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
-using REW的空间BLL;
-using REW的空间Model;
+using REWBlogBLL;
+using REWBlogModel;
 
-namespace REW的空间.Controllers
+namespace REWBlog.Controllers
 {
     public class AccountController : ApplicationController
     {

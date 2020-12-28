@@ -1,4 +1,4 @@
-namespace REW的空间Model
+namespace REWBlogModel
 {
     using System;
     using System.Collections.Generic;
@@ -22,6 +22,9 @@ namespace REW的空间Model
         public int A_TID { get; set; }
 
         public string A_CONTENT { get; set; }
+
+        [StringLength(50)]
+        public string A_CATALOG { get; set; }
 
         public virtual TYPES TYPES { get; set; }
     }

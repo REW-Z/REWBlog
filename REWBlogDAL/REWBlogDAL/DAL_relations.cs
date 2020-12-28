@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using REW的空间Model;
+using REWBlogModel;
 
-namespace REW的空间DAL
+namespace REWBlogDAL
 {
     public class DAL_relations
     {

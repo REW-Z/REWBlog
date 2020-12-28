@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace REW的空间Model
+namespace REWBlogModel
 {
     public class CHECKIN
     {

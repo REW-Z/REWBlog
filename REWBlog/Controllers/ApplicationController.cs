@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace REW的空间.Controllers
+namespace REWBlog.Controllers
 {
     public abstract class ApplicationController:Controller
     {
-        public REW的空间BLL.BLL_articles bll_articles = new REW的空间BLL.BLL_articles();
-        public REW的空间BLL.BLL_checkin bll_checkin = new REW的空间BLL.BLL_checkin();
-        public REW的空间BLL.BLL_noti bll_noti = new REW的空间BLL.BLL_noti();
-        public REW的空间BLL.BLL_relations bll_relations = new REW的空间BLL.BLL_relations();
-        public REW的空间BLL.BLL_types bll_types = new REW的空间BLL.BLL_types();
-        public REW的空间BLL.BLL_users bll_users = new REW的空间BLL.BLL_users();
+        public REWBlogBLL.BLL_articles bll_articles = new REWBlogBLL.BLL_articles();
+        public REWBlogBLL.BLL_checkin bll_checkin = new REWBlogBLL.BLL_checkin();
+        public REWBlogBLL.BLL_noti bll_noti = new REWBlogBLL.BLL_noti();
+        public REWBlogBLL.BLL_relations bll_relations = new REWBlogBLL.BLL_relations();
+        public REWBlogBLL.BLL_types bll_types = new REWBlogBLL.BLL_types();
+        public REWBlogBLL.BLL_users bll_users = new REWBlogBLL.BLL_users();
 
         public ApplicationController()
         {

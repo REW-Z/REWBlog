@@ -5,10 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using REW的空间Model;
-using REW的空间BLL;
+using REWBlogModel;
+using REWBlogBLL;
 
-namespace REW的空间.Controllers
+namespace REWBlog.Controllers
 {
     public class HomeController : ApplicationController
     {
@@ -19,6 +19,13 @@ namespace REW的空间.Controllers
             FileInfo[] files = dir.GetFiles();
             ViewBag.Imgs = files;
             return View();
+        }
+
+        //测试
+        public string Test()
+        {
+            string str = Json(new{ a = true, b = "123" }).ToString();
+            return str;
         }
 
         /// <summary>

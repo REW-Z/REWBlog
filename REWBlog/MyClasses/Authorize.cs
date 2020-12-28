@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Filters;
-using REW的空间BLL;
-using REW的空间Model;
+using REWBlogBLL;
+using REWBlogModel;
 
-namespace REW的空间.MyClasses
+namespace REWBlog.MyClasses
 {
     public class AdminAuthorize:System.Web.Mvc.AuthorizeAttribute
     {

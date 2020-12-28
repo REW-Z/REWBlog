@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using REW的空间Model;
+using REWBlogModel;
 
-namespace REW的空间BLL
+namespace REWBlogBLL
 {
     public class BLL_users
     {
-        REW的空间DAL.DAL_users dal_users = new REW的空间DAL.DAL_users();
+        REWBlogDAL.DAL_users dal_users = new REWBlogDAL.DAL_users();
         public void HelloWorld()
         {
 
@@ -19,7 +19,7 @@ namespace REW的空间BLL
         /// </summary>
         /// <param name="userlogin"></param>
         /// <returns></returns>
-        public bool TryAuthenticate(REW的空间Model.USERS userlogin)
+        public bool TryAuthenticate(REWBlogModel.USERS userlogin)
         {
             bool Success = dal_users.TryAuthenticate(userlogin);
             return Success;

@@ -9,9 +9,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using REW的空间Model;
+using REWBlogModel;
 
-namespace REW的空间DAL
+namespace REWBlogDAL
 {
     public class DAL_users
     {
@@ -25,7 +25,7 @@ namespace REW的空间DAL
         /// </summary>
         /// <param name="userlogin"></param>
         /// <returns></returns>
-        public bool TryAuthenticate(REW的空间Model.USERS userlogin)
+        public bool TryAuthenticate(REWBlogModel.USERS userlogin)
         {
             USERS result = new USERS();
 

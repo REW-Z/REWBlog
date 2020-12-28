@@ -1,12 +1,14 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using REW的空间BLL;
-using REW的空间Model;
+using REWBlogBLL;
+using REWBlogModel;
 
-namespace REW的空间.Controllers
+
+namespace REWBlog.Controllers
 {
     public class PublishController : ApplicationController
     {
@@ -16,10 +18,9 @@ namespace REW的空间.Controllers
         public ActionResult Index()
         {
             List<TYPES> list_type = bll_types.GetAllTypes();
-            IEnumerable<SelectListItem> selectlist = list_type.Select(x => new SelectListItem { Text = x.T_NAME, Value = x.T_ID.ToString() });
+            IEnumerable<SelectListItem> selectlist1 = list_type.Select(x => new SelectListItem { Text = x.T_NAME, Value = x.T_ID.ToString() });
 
-        
-            ViewBag.ListOfTypes = selectlist;
+            ViewBag.ListOfTypes = selectlist1;
             return View();
         }
 
@@ -35,6 +36,38 @@ namespace REW的空间.Controllers
             bll_noti.AddNotiAboutMyself(User.Identity.Name, 0, article.A_ID.ToString());
             bll_noti.PushToFollowers(User.Identity.Name, 0, article.A_ID.ToString());
             return View(article);
+        }
+
+        //处理图片上传
+        [HttpPost]
+        public JsonResult UploadImage()
+        {
+            var files = Request.Files;
+            if (files.Count == 0)
+            {
+                var objError = new { uploaded = false, url = string.Empty };
+                return Json(objError);
+            }
+
+            var file = files[0];
+            var fileName = file.FileName;
+            var guidName = Guid.NewGuid() + System.IO.Path.GetExtension(fileName);
+            var saveDir = Server.MapPath(@"~/Images/ArticleImages/");
+            var previewPath = "/Images/ArticleImages/" + guidName;
+            
+
+            bool result = true;
+            try
+            {
+                file.SaveAs(saveDir + guidName);
+            }
+            catch
+            {
+                result = false;
+            }
+
+            var obj = new { uploaded = result, url = result ? previewPath : string.Empty };
+            return Json(obj);
         }
     }
 }

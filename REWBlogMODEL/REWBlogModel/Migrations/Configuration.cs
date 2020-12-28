@@ -1,18 +1,18 @@
-namespace REW的空间Model.Migrations
+namespace REWBlogModel.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<REW的空间Model.Entities>
+    internal sealed class Configuration : DbMigrationsConfiguration<REWBlogModel.Entities>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(REW的空间Model.Entities context)
+        protected override void Seed(REWBlogModel.Entities context)
         {
             //  This method will be called after migrating to the latest version.
 

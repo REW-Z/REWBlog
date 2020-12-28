@@ -1,4 +1,4 @@
-﻿namespace REW的空间Model
+﻿namespace REWBlogModel
 {
     using System;
     using System.Data.Entity;
