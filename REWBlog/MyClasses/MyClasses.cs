@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +16,15 @@ namespace REWBlog.MyClasses
         {
             //BLL_checkin bll_checkin = new BLL_checkin();
             return bll_checkin.IsCheckedIn(username);
+        }
+    }
+
+    public class StringProcess
+    {
+        public static string Validate(string str)
+        {
+            string newStr = Regex.Replace(str, "[\\<|\\>|\\?]", "x");
+            return newStr;
         }
     }
 }

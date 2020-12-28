@@ -22,10 +22,9 @@ namespace REWBlog.Controllers
         }
 
         //测试
-        public string Test()
+        public ContentResult Test()
         {
-            string str = Json(new{ a = true, b = "123" }).ToString();
-            return str;
+            return Content("<script>alert('test');</script>");
         }
 
         /// <summary>

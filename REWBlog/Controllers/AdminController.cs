@@ -2,6 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using System.Web;
 using System.Web.Mvc;
 using REWBlog.MyClasses;
@@ -124,7 +125,7 @@ namespace REWBlog.Controllers
         [AdminAuthorize]
         public ActionResult AdminAddImg(HttpPostedFileBase file)
         {
-            if(file != null)
+            if (file != null)
             {
                 string path = Server.MapPath("~/Images/Slides/" + Path.GetFileName(file.FileName));
                 file.SaveAs(path);
@@ -132,10 +133,107 @@ namespace REWBlog.Controllers
             return RedirectToAction("AdminSlideImg");
         }
 
+        [Authorize]
+        [AdminAuthorize]
         public ActionResult AdminDeleteNotifications()
         {
             int result = bll_noti.ClearNotifications();
             return RedirectToAction("Index", new { numNotiDel = result });
+        }
+
+        [Authorize]
+        [AdminAuthorize]
+        public ActionResult BackupDatabase()
+        {
+            //错误信息
+            List<string> listOfError = new List<string>();
+            //文件夹创建
+            string dir = Server.MapPath("~/App_Data/DatabaseBackup/ARTICLES/");
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            //读取数据库
+            List<ARTICLES> articles = bll_articles.GetAllArticles();
+            foreach (ARTICLES article in articles)
+            {
+                try
+                {
+                    XDocument doc = new XDocument(
+                    new XDeclaration("1.0", "utf-8", "yes"),
+                    new XElement("Article",
+                        new XAttribute("A_ID", article.A_ID),
+                        new XAttribute("A_TID", article.A_TID),
+                        new XElement("A_NAME", new XCData(article.A_NAME)),
+                        new XElement("A_AUTHOR", new XCData(article.A_AUTHOR)),
+                        new XElement("A_DATE", new XCData(article.A_DATE.ToString())),
+                        new XElement("A_CONTENT", new XCData(article.A_CONTENT != null ? article.A_CONTENT : "-")),
+                        new XElement("A_CATALOG", new XCData(article.A_CATALOG != null ? article.A_CATALOG : "-"))
+                        )
+                    );
+                    doc.Save(dir + StringProcess.Validate(article.A_NAME) + ".xml");
+                }
+                catch
+                {
+                    listOfError.Add("文章：" + StringProcess.Validate(article.A_NAME) + " 未成功备份！！");
+                }
+            }
+
+            System.Text.StringBuilder strb = new System.Text.StringBuilder();
+            strb.Append("<p>");
+            foreach (var item in listOfError)
+            {
+                strb.Append(item + "<br />");
+            }
+            strb.Append("</p><script>alert('已完成备份！');</script>");
+            return Content(strb.ToString());
+        }
+
+        [Authorize]
+        [AdminAuthorize]
+        public string ImportBackup()
+        {
+            int count = 0;
+            int errorCount = 0;
+            DirectoryInfo dirInfo = new DirectoryInfo(Server.MapPath("~/App_Data/DatabaseBackup/ARTICLES/"));
+            FileInfo[] fileInfos = dirInfo.GetFiles("*.xml");
+            foreach (var file in fileInfos)
+            {
+                XDocument doc = XDocument.Load(file.FullName);
+                try
+                {
+                    XElement eleArticle = doc.Element("Article");
+                    string aidStr = eleArticle.Attribute("A_ID").Value;
+                    string atidStr = eleArticle.Attribute("A_TID").Value;
+                    string nameStr = eleArticle.Element("A_NAME").Value;
+                    string authorStr = eleArticle.Element("A_AUTHOR").Value;
+                    string dateStr = eleArticle.Element("A_DATE").Value;
+                    string contentStr = eleArticle.Element("A_CONTENT").Value;
+                    string catalogStr = eleArticle.Element("A_CATALOG").Value;
+
+                    ARTICLES arti = new ARTICLES();
+                    arti.A_ID = Convert.ToInt32(aidStr);
+                    arti.A_TID = Convert.ToInt32(atidStr);
+                    arti.A_NAME = nameStr;
+                    arti.A_AUTHOR = authorStr;
+                    DateTime date;
+                    System.DateTime.TryParse(dateStr, out date);
+                    arti.A_DATE = date;
+                    arti.A_CONTENT = contentStr;
+                    arti.A_CATALOG = catalogStr == "" ? null : catalogStr;
+
+                    if (bll_articles.GetAllArticles().FindAll(x => x.A_NAME == arti.A_NAME).Count == 0)
+                    {
+                        bll_articles.AddArticle(arti);
+                        count++;
+                    }
+                }
+                catch
+                {
+                    errorCount++;
+                }
+            }
+            return "完成：共导入" + count + "个文件。失败" + errorCount + "个文件。";
         }
     }
 }
