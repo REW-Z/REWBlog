@@ -1,0 +1,53 @@
+﻿@model List<REWBlogModel.NOTIFICATIONS>
+@{
+    ViewBag.Title = "Notifications";
+}
+
+<h2>Notifications</h2>
+@{
+    foreach (var item in Model)
+    {
+        <div style="margin:10px;">
+            <div class="card" style="height:100px;">
+                <div>
+                    @{
+                        if (item.READ == false)
+                        {
+                            <b style="color:grey; font-size:18px;">&nbsp;未读&nbsp;</b><span>来自：</span><img style="height:30px;width:30px;border-radius:15px;" src="~/Images/ProfilePics/@(item.WHOSE).png" onerror='this.src="/Images/ProfilePics/DefaultPic.png"' />@item.WHOSE
+                        }
+                        else
+                        {
+                            <b style="color:grey; font-size:18px;">&nbsp;已读&nbsp;</b><span>来自：</span><img style="height:30px;width:30px;border-radius:15px;" src="~/Images/ProfilePics/@(item.WHOSE).png" onerror='this.src="/Images/ProfilePics/DefaultPic.png"' />@item.WHOSE
+                        }
+                    }
+                </div>
+                <div class="card-body">
+                    @{
+                        int articleId = Convert.ToInt32(item.MESSAGE);
+                        if (((REWBlogBLL.BLL_articles)ViewBag.bll_articles).GetArticleById(articleId) != null)
+                        {
+                            string articleName = ViewBag.bll_articles.GetArticleById(articleId).A_NAME;
+                            if (item.WHOSE == item.USERNAME)
+                            {
+                                <a style="color:dimgray;text-decoration:none" href="/Account/ReadNotification/@(item.NID)?aid=@articleId"><p>我发布了文章@(articleName)</p></a>
+                            }
+                            else
+                            {
+                                <a style="color:dimgray;text-decoration:none" href="/Account/ReadNotification/@(item.NID)?aid=@articleId"><p>@(item.WHOSE)发布了文章@(articleName)</p></a>
+                            }
+                        }
+                        else
+                        {
+                            <span>错误：文章不存在。</span>
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+
+    }
+}
+
+@Html.ActionLink("全部已读", "AllRead", "Account")
+@Html.ActionLink("清空消息", "ClearMyNotifications", "Account")

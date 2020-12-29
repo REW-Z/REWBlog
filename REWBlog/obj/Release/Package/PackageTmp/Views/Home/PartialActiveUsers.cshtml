@@ -1,0 +1,46 @@
+﻿@model List<REWBlogModel.USERS>
+
+@{
+
+    foreach (var item in Model)
+    {
+        <a href="/Account/Visit/@item.UID">
+            <div>
+                <div class="float-left">
+
+                    <p>
+                        <img src="~/Images/ProfilePics/@(item.NAME).png" style="height:50px;width:50px;border-radius:25px" onerror='this.src="/Images/ProfilePics/DefaultPic.png"' />
+                        <span>@item.NAME</span>
+                    </p>
+                </div>
+                <div class="float-right">
+                    @{
+                        if (item.ROLE == "Admin")
+                        {
+                            <div>
+                                <img style="height:20px;width:20px;" src="~/Images/App/admin.png" />
+                                <span style="margin:auto 10px;font-size:12px;color:gold;">管理员</span>
+                            </div>
+                            <div>
+                                <span style="margin:auto 10px;font-size:12px;color:gray;">积分：@item.POINTS</span>
+                            </div>
+                        }
+                        else
+                        {
+                            <div>
+                                <span style="margin:auto 10px;font-size:12px;color:gray;">普通用户</span>
+                            </div>
+
+                            <div>
+                                <span style="margin:auto 10px;font-size:12px;color:gray;">积分：@item.POINTS</span>
+                            </div>
+                        }
+                    }
+
+                </div>
+                <div class="clearfloat"></div>
+            </div>
+        </a>
+    }
+
+}

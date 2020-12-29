@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\发布的网站\REWBlog</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Addons/ckeditor5-build-classic/ckeditor-manifest.json">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/ckeditor.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/ckeditor.js.map">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/index.html">
+      <publishTime>12/28/2020 04:01:39</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/LICENSE.md">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/README.md">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/sample/css/sample.css">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/sample/img/bg.png">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/sample/img/github.svg">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/sample/img/logo.svg">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/sample/img/umbrellas.jpg">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/af.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ar.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ast.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/az.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/bg.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ca.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/cs.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/da.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/de-ch.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/de.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/el.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/en-au.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/en-gb.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/eo.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/es.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/et.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/eu.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/fa.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/fi.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/fr.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/gl.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/gu.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/he.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/hi.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/hr.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/hu.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/id.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/it.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ja.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/km.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/kn.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ko.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ku.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/lt.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/lv.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ms.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/nb.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ne.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/nl.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/no.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/oc.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/pl.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/pt-br.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/pt.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ro.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ru.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/si.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/sk.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/sl.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/sq.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/sr-latn.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/sr.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/sv.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/th.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/tk.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/tr.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/tt.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/ug.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/uk.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/vi.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/zh-cn.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/translations/zh.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/vendor.js">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="Addons/ckeditor5-build-classic/vendor.js.map">
+      <publishTime>12/10/2020 09:57:22</publishTime>
+    </File>
+    <File Include="App_Data/REWSPACE_DB.mdf">
+      <publishTime>12/29/2020 11:00:31</publishTime>
+    </File>
+    <File Include="App_Data/REWSPACE_DB_log.ldf">
+      <publishTime>12/29/2020 11:00:32</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/REWBlog.dll">
+      <publishTime>12/29/2020 11:04:47</publishTime>
+    </File>
+    <File Include="bin/REWBlog.pdb">
+      <publishTime>12/29/2020 11:04:47</publishTime>
+    </File>
+    <File Include="bin/REWBlogBLL.dll">
+      <publishTime>12/29/2020 02:51:14</publishTime>
+    </File>
+    <File Include="bin/REWBlogBLL.pdb">
+      <publishTime>12/29/2020 02:51:14</publishTime>
+    </File>
+    <File Include="bin/REWBlogDAL.dll">
+      <publishTime>12/29/2020 02:51:13</publishTime>
+    </File>
+    <File Include="bin/REWBlogDAL.dll.config">
+      <publishTime>08/07/2019 19:08:45</publishTime>
+    </File>
+    <File Include="bin/REWBlogDAL.pdb">
+      <publishTime>12/29/2020 02:51:13</publishTime>
+    </File>
+    <File Include="bin/REWBlogModel.dll">
+      <publishTime>12/29/2020 02:51:12</publishTime>
+    </File>
+    <File Include="bin/REWBlogModel.dll.config">
+      <publishTime>08/07/2019 21:06:36</publishTime>
+    </File>
+    <File Include="bin/REWBlogModel.pdb">
+      <publishTime>12/29/2020 02:51:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>05/24/2018 13:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.AccessControl.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.AccessControl.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Claims.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Principal.Windows.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>05/24/2018 13:38:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>02/01/2018 12:20:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>02/01/2018 12:16:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>02/01/2018 12:16:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>02/01/2018 12:20:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>02/01/2018 12:20:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>02/01/2018 12:20:56</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>02/01/2018 12:21:00</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>02/01/2018 12:16:38</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>02/01/2018 12:17:00</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Webpages.Deployment.resources.dll">
+      <publishTime>02/01/2018 12:21:00</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Webpages.Razor.resources.dll">
+      <publishTime>02/01/2018 12:21:00</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Webpages.resources.dll">
+      <publishTime>02/01/2018 12:21:00</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css">
+      <publishTime>08/07/2019 21:56:35</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css.map">
+      <publishTime>08/07/2019 21:56:35</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css">
+      <publishTime>08/07/2019 21:56:35</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css.map">
+      <publishTime>08/07/2019 21:56:35</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css">
+      <publishTime>08/07/2019 21:56:34</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css.map">
+      <publishTime>08/07/2019 21:56:34</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css">
+      <publishTime>08/07/2019 21:56:34</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css.map">
+      <publishTime>08/07/2019 21:56:34</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>08/07/2019 21:56:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>08/07/2019 21:56:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>08/07/2019 21:56:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>08/07/2019 21:56:33</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>08/07/2019 15:33:04</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/28/2020 02:27:17</publishTime>
+    </File>
+    <File Include="Images/App/admin.png">
+      <publishTime>08/11/2019 17:21:01</publishTime>
+    </File>
+    <File Include="Images/App/siteTitle.png">
+      <publishTime>08/30/2019 20:48:15</publishTime>
+    </File>
+    <File Include="Images/ProfilePics/DefaultPic.png">
+      <publishTime>07/31/2019 19:12:41</publishTime>
+    </File>
+    <File Include="Images/ProfilePics/REW.png">
+      <publishTime>08/09/2019 22:24:22</publishTime>
+    </File>
+    <File Include="Images/Slides/img1.jpg">
+      <publishTime>12/28/2020 09:21:42</publishTime>
+    </File>
+    <File Include="Images/Slides/img2.jpg">
+      <publishTime>08/08/2019 16:56:43</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js">
+      <publishTime>08/07/2019 21:56:33</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js.map">
+      <publishTime>08/07/2019 21:56:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js">
+      <publishTime>08/07/2019 21:56:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js.map">
+      <publishTime>08/07/2019 21:56:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>08/07/2019 21:56:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js.map">
+      <publishTime>08/07/2019 21:56:31</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>08/07/2019 21:56:31</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js.map">
+      <publishTime>08/07/2019 21:56:31</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper-utils.js">
+      <publishTime>08/07/2019 21:56:27</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper-utils.js.map">
+      <publishTime>08/07/2019 21:56:27</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper-utils.min.js">
+      <publishTime>08/07/2019 21:56:27</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper-utils.min.js.map">
+      <publishTime>08/07/2019 21:56:26</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper.js">
+      <publishTime>08/07/2019 21:56:26</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper.js.map">
+      <publishTime>08/07/2019 21:56:26</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper.min.js">
+      <publishTime>08/07/2019 21:56:25</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper.min.js.map">
+      <publishTime>08/07/2019 21:56:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.js">
+      <publishTime>08/07/2019 19:49:41</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.min.js">
+      <publishTime>08/07/2019 19:49:41</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.min.map">
+      <publishTime>08/07/2019 19:49:41</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.js">
+      <publishTime>08/07/2019 19:49:41</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.min.js">
+      <publishTime>08/07/2019 19:49:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.min.map">
+      <publishTime>08/07/2019 19:49:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>08/08/2019 22:45:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>08/08/2019 22:45:08</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>08/07/2019 15:33:27</publishTime>
+    </File>
+    <File Include="Scripts/popper-utils.js">
+      <publishTime>08/07/2019 21:56:25</publishTime>
+    </File>
+    <File Include="Scripts/popper-utils.js.map">
+      <publishTime>08/07/2019 21:56:25</publishTime>
+    </File>
+    <File Include="Scripts/popper-utils.min.js">
+      <publishTime>08/07/2019 21:56:24</publishTime>
+    </File>
+    <File Include="Scripts/popper-utils.min.js.map">
+      <publishTime>08/07/2019 21:56:24</publishTime>
+    </File>
+    <File Include="Scripts/popper.js">
+      <publishTime>08/07/2019 21:56:24</publishTime>
+    </File>
+    <File Include="Scripts/popper.js.map">
+      <publishTime>08/07/2019 21:56:24</publishTime>
+    </File>
+    <File Include="Scripts/popper.min.js">
+      <publishTime>08/07/2019 21:56:24</publishTime>
+    </File>
+    <File Include="Scripts/popper.min.js.map">
+      <publishTime>08/07/2019 21:56:23</publishTime>
+    </File>
+    <File Include="Scripts/README.md">
+      <publishTime>08/07/2019 21:56:23</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper-utils.js">
+      <publishTime>08/07/2019 21:56:23</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper-utils.js.map">
+      <publishTime>08/07/2019 21:56:23</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper-utils.min.js">
+      <publishTime>08/07/2019 21:56:23</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper-utils.min.js.map">
+      <publishTime>08/07/2019 21:56:22</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper.js">
+      <publishTime>08/07/2019 21:56:22</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper.js.map">
+      <publishTime>08/07/2019 21:56:21</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper.min.js">
+      <publishTime>08/07/2019 21:56:21</publishTime>
+    </File>
+    <File Include="Scripts/umd/popper.min.js.map">
+      <publishTime>08/07/2019 21:56:20</publishTime>
+    </File>
+    <File Include="Views/Account/AjaxCheckIn.cshtml">
+      <publishTime>12/28/2020 02:27:17</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePassword.cshtml">
+      <publishTime>12/28/2020 02:27:17</publishTime>
+    </File>
+    <File Include="Views/Account/EditArticle.cshtml">
+      <publishTime>12/29/2020 10:35:30</publishTime>
+    </File>
+    <File Include="Views/Account/Index.cshtml">
+      <publishTime>12/28/2020 02:27:52</publishTime>
+    </File>
+    <File Include="Views/Account/Notifications.cshtml">
+      <publishTime>12/28/2020 02:28:05</publishTime>
+    </File>
+    <File Include="Views/Account/ShowMyArticles.cshtml">
+      <publishTime>12/28/2020 09:13:46</publishTime>
+    </File>
+    <File Include="Views/Account/ShowOtherUsers.cshtml">
+      <publishTime>12/28/2020 02:28:21</publishTime>
+    </File>
+    <File Include="Views/Account/Visit.cshtml">
+      <publishTime>12/28/2020 02:28:25</publishTime>
+    </File>
+    <File Include="Views/Admin/AdminArticles.cshtml">
+      <publishTime>12/28/2020 02:28:34</publishTime>
+    </File>
+    <File Include="Views/Admin/AdminSlideImg.cshtml">
+      <publishTime>09/01/2019 00:37:46</publishTime>
+    </File>
+    <File Include="Views/Admin/AdminUsers.cshtml">
+      <publishTime>12/28/2020 02:28:39</publishTime>
+    </File>
+    <File Include="Views/Admin/Index.cshtml">
+      <publishTime>12/29/2020 02:23:39</publishTime>
+    </File>
+    <File Include="Views/Home/AjaxArticles.cshtml">
+      <publishTime>12/28/2020 02:28:43</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>08/30/2019 20:48:35</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>12/28/2020 02:28:49</publishTime>
+    </File>
+    <File Include="Views/Home/Login.cshtml">
+      <publishTime>12/28/2020 02:28:54</publishTime>
+    </File>
+    <File Include="Views/Home/PartialActiveUsers.cshtml">
+      <publishTime>12/28/2020 02:28:58</publishTime>
+    </File>
+    <File Include="Views/Home/PartialArticlesAction.cshtml">
+      <publishTime>12/28/2020 02:29:03</publishTime>
+    </File>
+    <File Include="Views/Home/PartialTypesAction.cshtml">
+      <publishTime>12/28/2020 02:29:08</publishTime>
+    </File>
+    <File Include="Views/Home/Signup.cshtml">
+      <publishTime>12/28/2020 02:29:12</publishTime>
+    </File>
+    <File Include="Views/Publish/Index.cshtml">
+      <publishTime>12/29/2020 10:35:31</publishTime>
+    </File>
+    <File Include="Views/Publish/Publish.cshtml">
+      <publishTime>12/28/2020 02:29:23</publishTime>
+    </File>
+    <File Include="Views/Read/Index.cshtml">
+      <publishTime>12/28/2020 02:29:27</publishTime>
+    </File>
+    <File Include="Views/Search/Index.cshtml">
+      <publishTime>12/28/2020 02:29:31</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>12/29/2020 10:14:50</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>12/28/2020 02:29:56</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>08/30/2019 17:10:42</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/29/2020 11:04:50</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

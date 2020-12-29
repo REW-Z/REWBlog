@@ -96,76 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Addons\ckeditor5-build-classic\ckeditor.js" />
-    <Content Include="Addons\ckeditor5-build-classic\index.html" />
-    <Content Include="Addons\ckeditor5-build-classic\sample\css\sample.css" />
-    <Content Include="Addons\ckeditor5-build-classic\sample\img\bg.png" />
-    <Content Include="Addons\ckeditor5-build-classic\sample\img\github.svg" />
-    <Content Include="Addons\ckeditor5-build-classic\sample\img\logo.svg" />
-    <Content Include="Addons\ckeditor5-build-classic\sample\img\umbrellas.jpg" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\af.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ar.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ast.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\az.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\bg.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ca.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\cs.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\da.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\de-ch.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\de.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\el.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\en-au.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\en-gb.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\eo.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\es.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\et.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\eu.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\fa.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\fi.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\fr.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\gl.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\gu.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\he.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\hi.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\hr.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\hu.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\id.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\it.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ja.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\km.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\kn.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ko.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ku.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\lt.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\lv.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ms.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\nb.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ne.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\nl.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\no.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\oc.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\pl.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\pt-br.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\pt.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ro.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ru.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\si.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\sk.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\sl.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\sq.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\sr-latn.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\sr.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\sv.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\th.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\tk.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\tr.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\tt.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\ug.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\uk.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\vi.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\zh-cn.js" />
-    <Content Include="Addons\ckeditor5-build-classic\translations\zh.js" />
-    <Content Include="Addons\ckeditor5-build-classic\vendor.js" />
     <Content Include="App_Data\REWSPACE_DB.mdf" />
     <Content Include="App_Data\REWSPACE_DB_log.ldf">
       <DependentUpon>REWSPACE_DB.mdf</DependentUpon>
@@ -184,7 +114,6 @@
     <Content Include="Images\ProfilePics\REW.png" />
     <Content Include="Images\Slides\img1.jpg" />
     <Content Include="Images\Slides\img2.jpg" />
-    <Content Include="Images\Slides\img3.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -207,11 +136,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="Addons\ckeditor5-build-classic\ckeditor-manifest.json" />
-    <Content Include="Addons\ckeditor5-build-classic\ckeditor.js.map" />
-    <Content Include="Addons\ckeditor5-build-classic\LICENSE.md" />
-    <Content Include="Addons\ckeditor5-build-classic\README.md" />
-    <Content Include="Addons\ckeditor5-build-classic\vendor.js.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -248,7 +173,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -294,6 +221,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Addons\" />
     <Folder Include="Images\ArticleImages\" />
     <Folder Include="Models\" />
   </ItemGroup>

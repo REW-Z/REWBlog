@@ -1,0 +1,40 @@
+﻿@model REWBlogModel.ARTICLES
+
+@{
+    ViewBag.Title = "Publish";
+}
+
+<h2>Publish</h2>
+@{ if (ViewBag.IsSuccess)
+    {
+        <h2>成功发表</h2>
+    }
+    else
+    {
+        <h2>发表失败</h2>
+    } }
+        <div class="card">
+            <div class="card-header">
+                <span>文章序号：</span>
+                @Model.A_ID
+                <br />
+                <span>文章标题：</span>
+                @Model.A_NAME
+                <br />
+            </div>
+            
+            <div class="card-body">
+                <span>作者：</span>
+                @Model.A_AUTHOR
+                <br />
+                <span>日期：</span>
+                @Model.A_DATE
+                <br />
+                <span>类别：</span>
+                @Model.A_TID
+                <br />
+                <span>正文：</span>
+                @Html.Raw(Model.A_CONTENT)
+            </div>
+        </div>
+

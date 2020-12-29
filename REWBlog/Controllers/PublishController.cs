@@ -42,31 +42,30 @@ namespace REWBlog.Controllers
         [HttpPost]
         public JsonResult UploadImage()
         {
+            int errCount = 0;
             var files = Request.Files;
-            if (files.Count == 0)
+            List<string> listOfPreviewPath = new List<string>();
+            for(int i = 0; i < files.Count; i++)
             {
-                var objError = new { uploaded = false, url = string.Empty };
-                return Json(objError);
+                var file = files[i];
+                var fileName = file.FileName;
+                var guidName = Guid.NewGuid() + System.IO.Path.GetExtension(fileName);
+                var saveDir = Server.MapPath(@"~/Images/ArticleImages/");
+                var previewPath = "/Images/ArticleImages/" + guidName;
+
+                try
+                {
+                    file.SaveAs(saveDir + guidName);
+                }
+                catch
+                {
+                    errCount++;
+                }
+                listOfPreviewPath.Add(previewPath);
             }
 
-            var file = files[0];
-            var fileName = file.FileName;
-            var guidName = Guid.NewGuid() + System.IO.Path.GetExtension(fileName);
-            var saveDir = Server.MapPath(@"~/Images/ArticleImages/");
-            var previewPath = "/Images/ArticleImages/" + guidName;
-            
 
-            bool result = true;
-            try
-            {
-                file.SaveAs(saveDir + guidName);
-            }
-            catch
-            {
-                result = false;
-            }
-
-            var obj = new { uploaded = result, url = result ? previewPath : string.Empty };
+            var obj = new { errno = errCount, data = listOfPreviewPath.ToArray() };
             return Json(obj);
         }
     }

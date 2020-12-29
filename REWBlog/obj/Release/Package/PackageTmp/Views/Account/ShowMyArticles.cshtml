@@ -1,0 +1,52 @@
+﻿@model List<REWBlogModel.ARTICLES>
+@{
+    ViewBag.Title = "ShowArticles";
+}
+
+<h2>我的文章</h2>
+
+@{
+
+    List<string> listCatalog = new List<string>();
+
+    foreach (var item in Model)
+    {
+        if (!listCatalog.Any(x => x == item.A_CATALOG))
+        {
+            listCatalog.Add(item.A_CATALOG);
+        }
+    }
+
+    foreach (string cata in listCatalog)
+    {
+        <div class="card-body">
+            @{
+                string strCata = cata == null ? "未分类" : cata;
+                <p style="font-size:24px;color:gray">@strCata</p>
+
+                List<REWBlogModel.ARTICLES> articlesOfCata = Model.FindAll(x => x.A_CATALOG == cata);
+                foreach (var item in articlesOfCata)
+                {
+                    <a href="/Read/Index/@item.A_ID" style="color:black;text-decoration:none">
+                        <span>
+                            <b>@item.A_NAME</b>
+                        </span>
+                    </a>
+                    <span>日期：@item.A_DATE &nbsp;&nbsp;</span>
+                    <span>类别：@item.TYPES.T_NAME &nbsp;&nbsp;</span>
+                    <span>
+                        @Html.ActionLink("编辑文章", "EditArticle", new { id = item.A_ID, controller = "Account" }, new { })
+                        &nbsp;
+                    </span>
+                    <span>
+                        @Html.ActionLink("删除文章", "DeleteArticle", new { id = item.A_ID, controller = "Account" }, new { })
+                        &nbsp;
+                    </span>
+                    <br />
+                }
+            }
+            <br/>
+            <br/>
+        </div>
+    }
+}

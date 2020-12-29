@@ -1,0 +1,14 @@
+﻿@{
+    if (Context.User.Identity.IsAuthenticated)
+    {
+        if (REWBlog.MyClasses.ClassCheckIn.IsCheckedIn(Context.User.Identity.Name))
+        {
+            <div class="btn btn-secondary">已签到</div>
+        }
+        else
+        {
+            @Ajax.ActionLink("签到", "AjaxCheckIn", new { controller = "Account" }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "div_checkin", InsertionMode = InsertionMode.Replace }, new { id = "link_check", @class = "btn btn-danger" })
+            <span>&nbsp;&nbsp;</span>
+        }
+    }
+}

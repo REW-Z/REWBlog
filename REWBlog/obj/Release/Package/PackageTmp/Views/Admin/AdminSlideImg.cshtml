@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "AdminSlideImg";
+}
+
+<h2>管理滚动图片</h2>
+
+@{
+    System.IO.DirectoryInfo dir = new DirectoryInfo(Server.MapPath("~/Images/Slides"));
+    FileInfo[] files = dir.GetFiles();
+    foreach (var file in files)
+    {
+        <div>
+
+            <div class="float-left">
+                <img src="/Images/Slides/@file.Name" height="100" width="200" />
+            </div>
+            <div class="float-left">
+                <span>图像名称: @file.Name</span>
+                <span>图像大小：@(file.Length)字节</span>
+                @Html.ActionLink("删除图片", "AdminDeleteImg", "Admin", new { filename = file.Name }, new { })
+            </div>
+            <div class="clearfloat"></div>
+        </div>
+    }
+}
+
+<div>
+    <a data-toggle="modal" data-target="#uploadImgModal">
+        <h3 class="btn btn-primary">添加图片</h3>
+    </a>
+
+    <div class="modal fade" id="uploadImgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">上传图片</h4>
+                </div>
+                <div class="modal-body">
+
+                    @using (Html.BeginForm("AdminAddImg", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <input type="file" name="file" />
+                        <input type="submit" name="upload" value="提交" />
+                    }
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
