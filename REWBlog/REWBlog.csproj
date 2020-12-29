@@ -112,8 +112,6 @@
     <Content Include="Images\App\siteTitle.png" />
     <Content Include="Images\ProfilePics\DefaultPic.png" />
     <Content Include="Images\ProfilePics\REW.png" />
-    <Content Include="Images\Slides\img1.jpg" />
-    <Content Include="Images\Slides\img2.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -223,6 +221,7 @@
   <ItemGroup>
     <Folder Include="Addons\" />
     <Folder Include="Images\ArticleImages\" />
+    <Folder Include="Images\Slides\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

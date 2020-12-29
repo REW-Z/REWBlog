@@ -42,6 +42,13 @@ namespace REWBlog.Controllers
         [HttpPost]
         public JsonResult UploadImage()
         {
+            string saveDir = Server.MapPath(@"~/Images/ArticleImages/");
+            if (!Directory.Exists(saveDir))
+            {
+                Directory.CreateDirectory(saveDir);
+            }
+
+
             int errCount = 0;
             var files = Request.Files;
             List<string> listOfPreviewPath = new List<string>();
@@ -50,7 +57,6 @@ namespace REWBlog.Controllers
                 var file = files[i];
                 var fileName = file.FileName;
                 var guidName = Guid.NewGuid() + System.IO.Path.GetExtension(fileName);
-                var saveDir = Server.MapPath(@"~/Images/ArticleImages/");
                 var previewPath = "/Images/ArticleImages/" + guidName;
 
                 try
