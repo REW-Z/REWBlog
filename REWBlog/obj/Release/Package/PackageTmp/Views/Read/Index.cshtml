@@ -12,11 +12,24 @@
     </p>
     <br />
     @{
-        @Html.Raw(Model.A_CONTENT)
+        <div id="editor_md">
+            @Html.TextAreaFor(x => x.A_CONTENT)
+        </div>
     }
 
+    <script src="~/Addons/editor.md-1.5.0/lib/marked.min.js"></script>
+    <script type="text/javascript">
 
-
+        var editormdView;
+        editormdView = editormd.markdownToHTML("editor_md", {
+            htmlDecode: "style,script,iframe",  // you can filter tags decode
+            emoji: true,
+            taskList: true,
+            tex: true,  // 默认不解析
+            flowChart: true,  // 默认不解析
+            sequenceDiagram: true,  // 默认不解析
+        });
+    </script>
 
 </div>
 

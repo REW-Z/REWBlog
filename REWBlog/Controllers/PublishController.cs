@@ -38,9 +38,9 @@ namespace REWBlog.Controllers
             return View(article);
         }
 
-        //处理图片上传
+        //图片上传接口：WangEditor
         [HttpPost]
-        public JsonResult UploadImage()
+        public JsonResult UploadImageWangEditor()
         {
             string saveDir = Server.MapPath(@"~/Images/ArticleImages/");
             if (!Directory.Exists(saveDir))
@@ -52,7 +52,7 @@ namespace REWBlog.Controllers
             int errCount = 0;
             var files = Request.Files;
             List<string> listOfPreviewPath = new List<string>();
-            for(int i = 0; i < files.Count; i++)
+            for (int i = 0; i < files.Count; i++)
             {
                 var file = files[i];
                 var fileName = file.FileName;
@@ -72,6 +72,49 @@ namespace REWBlog.Controllers
 
 
             var obj = new { errno = errCount, data = listOfPreviewPath.ToArray() };
+            return Json(obj);
+        }
+
+        //图片上传接口：EditorMd
+        [HttpPost]
+        public JsonResult UploadImageEditorMd()
+        {
+            /// ```json
+            /// {
+            ///     success: 0 | 1,           // 0 表示上传失败，1 表示上传成功
+            ///     message: "提示的信息，上传成功或上传失败及错误信息等。",
+            ///     url: "图片地址"        // 上传成功时才返回
+            /// }
+            ///
+            /// ```
+
+            bool isSuccess;
+            string msg = "";
+
+            string saveDir = Server.MapPath(@"~/Images/ArticleImages/");
+            if (!Directory.Exists(saveDir))
+            {
+                Directory.CreateDirectory(saveDir);
+            }
+
+
+            var file = Request.Files[0];
+            var fileName = file.FileName;
+            var guidName = Guid.NewGuid() + System.IO.Path.GetExtension(fileName);
+            var previewPath = "/Images/ArticleImages/" + guidName;
+
+            try
+            {
+                file.SaveAs(saveDir + guidName);
+                isSuccess = true;
+            }
+            catch
+            {
+                isSuccess = false;
+            }
+
+
+            var obj = new { success = isSuccess ? 1 : 0, message = msg, url = previewPath };
             return Json(obj);
         }
     }

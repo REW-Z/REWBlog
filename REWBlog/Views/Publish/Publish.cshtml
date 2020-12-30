@@ -34,7 +34,7 @@
                 @Model.A_TID
                 <br />
                 <span>正文：</span>
-                @Html.Raw(Model.A_CONTENT)
+                @Html.ActionLink("点此查看", "Index", "Read", new { id = Model.A_ID }, new { })
             </div>
         </div>
 
